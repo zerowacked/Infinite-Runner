@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxubpbu4m640b"]
+
+[ext_resource type="Script" path="res://logic_controller.gd" id="1_172p4"]
+
+[node name="LogicController" type="Node2D"]
+script = ExtResource("1_172p4")
+
+[node name="SpawnLocation" type="Marker2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

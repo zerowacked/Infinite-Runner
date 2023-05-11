@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://do1a8hcrnbj8n"]
+
+[ext_resource type="Script" path="res://Scenes/Platform Sections/world.gd" id="1_mcsii"]
+[ext_resource type="PackedScene" uid="uid://djx776mtq4y0d" path="res://Scenes/Platform Sections/player.tscn" id="2_sr5yr"]
+[ext_resource type="PackedScene" uid="uid://dgj0b70o71af0" path="res://camera.tscn" id="3_hjgd1"]
+[ext_resource type="PackedScene" uid="uid://daa3q614pmccr" path="res://start_platform.tscn" id="4_61ygd"]
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_mcsii")
+
+[node name="Player" parent="." instance=ExtResource("2_sr5yr")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(16, -16)
+jump_height = 100.0
+jump_time_to_peak = 1.0
+jump_time_to_descent = 1.0
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera")
+
+[node name="Camera" parent="." instance=ExtResource("3_hjgd1")]
+position = Vector2(16, -16)
+
+[node name="StartPlatform" parent="." instance=ExtResource("4_61ygd")]

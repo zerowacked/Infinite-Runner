@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://xuefs3f0nst8"]
+
+[ext_resource type="Script" path="res://Scenes/Platform Sections/platform.gd" id="1_s0fax"]
+[ext_resource type="PackedScene" uid="uid://bp6kgel5eo06s" path="res://Scenes/Platform Sections/tile_map.tscn" id="2_m2bcw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpe6n"]
+size = Vector2(368, 16)
+
+[node name="Platform" type="StaticBody2D"]
+script = ExtResource("1_s0fax")
+
+[node name="TileMap" parent="." instance=ExtResource("2_m2bcw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(184, 8)
+shape = SubResource("RectangleShape2D_xpe6n")
+
+[node name="SpawnLocation" type="Marker2D" parent="."]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(360, 9)
+scale = Vector2(1, 0.9)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
