@@ -1,4 +1,0 @@
-[gd_scene format=3 uid="uid://2vfd3qm41ngu"]
-
-[node name="Platform1Spawn" type="Marker2D"]
-position = Vector2(-448, 0)
