@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6yssgexagagp"]
+[gd_scene load_steps=3 format=3 uid="uid://b6yssgexagagp"]
 
 [ext_resource type="Script" path="res://Scenes/Platform Sections/Platforms/platform_a.gd" id="1_lu56o"]
+[ext_resource type="PackedScene" uid="uid://bp6kgel5eo06s" path="res://Scenes/Platform Sections/Tilemap/dungeon_tile_map.tscn" id="2_2npki"]
 
 [node name="platform_a" type="Node2D"]
 script = ExtResource("1_lu56o")
+
+[node name="TileMap" parent="." instance=ExtResource("2_2npki")]
