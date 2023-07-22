@@ -36,4 +36,4 @@ slide={
 
 [layer_names]
 
-2d_physics/layer_1="DeathLayer"
+2d_physics/layer_1="Tile Collision Layer"
