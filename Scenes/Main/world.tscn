@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/world.gd" id="1_xdrg2"]
 [ext_resource type="PackedScene" path="res://Scenes/Player/player.tscn" id="2_gwvm4"]
 [ext_resource type="PackedScene" uid="uid://dgj0b70o71af0" path="res://Scenes/Camera/camera.tscn" id="3_xkbcs"]
-[ext_resource type="PackedScene" uid="uid://bkrijlvbo57k" path="res://Scenes/Platform Sections/start_platform.tscn" id="4_mjsyx"]
+[ext_resource type="PackedScene" uid="uid://b2p34w10rlwy" path="res://Scenes/Platform Sections/Platforms/start_platform.tscn" id="4_4ylts"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -12,7 +12,7 @@ script = ExtResource("1_xdrg2")
 [node name="Player" parent="." instance=ExtResource("2_gwvm4")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(16, -16)
+position = Vector2(16, -8)
 jump_height = 100.0
 jump_time_to_peak = 1.0
 jump_time_to_descent = 1.0
@@ -21,6 +21,6 @@ jump_time_to_descent = 1.0
 remote_path = NodePath("../../Camera")
 
 [node name="Camera" parent="." instance=ExtResource("3_xkbcs")]
-position = Vector2(16, -16)
+position = Vector2(16, -8)
 
-[node name="StartPlatform" parent="." instance=ExtResource("4_mjsyx")]
+[node name="start_platform" parent="." instance=ExtResource("4_4ylts")]

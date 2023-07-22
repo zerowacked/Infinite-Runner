@@ -10,9 +10,9 @@ var x_coordinate = 0 # this is the x coordinate of the last pixel of the start p
 var platform_count = 0 # number of platforms currently spawned
 
 @onready var platforms = [
-	preload("res://Scenes/Platform Sections/platform_a.tscn"),
-	preload("res://Scenes/Platform Sections/platform_b.tscn"),
-	preload("res://Scenes/Platform Sections/platform_c.tscn")
+	preload("res://Scenes/Platform Sections/Platforms/platform_a.tscn"),
+	preload("res://Scenes/Platform Sections/Platforms/platform_b.tscn"),
+	preload("res://Scenes/Platform Sections/Platforms/platform_c.tscn")
 ]
 
 func _ready():
