@@ -16,7 +16,7 @@ var platform_count = 0 # number of platforms currently spawned
 ]
 
 func _ready():
-	pass
+	randomize()
 
 func _physics_process(_delta):
 	if can_new_platform_spawn(platform_count, platform_limit) == true:
@@ -50,7 +50,7 @@ func randomize_y():
 	return random_y
 
 func randomize_blank_space(x):
-	var random_addition = randi_range(100,150)
+	var random_addition = randi_range(150,250)
 	var new_x = random_addition + x
 	return new_x
 
