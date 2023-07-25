@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj5h44loqg6i3"]
+
+[ext_resource type="Texture2D" uid="uid://gp6scve854np" path="res://Scenes/Platform Sections/Decoration Sprites/PNGs/rockpile_128px.png" id="1_cvf8l"]
+
+[node name="rockpile_128px" type="Sprite2D"]
+texture = ExtResource("1_cvf8l")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gp6scve854np"
-path="res://.godot/imported/rockpile_128px.png-f3caed9127b2aa0b16656ce58a536f8b.ctex"
+uid="uid://cx4wkx2prnx10"
+path="res://.godot/imported/parallax-00.png-3b590cc00184e5becbcbf6b2ff0d9553.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Platform Sections/Decoration Sprites/rockpile_128px.png"
-dest_files=["res://.godot/imported/rockpile_128px.png-f3caed9127b2aa0b16656ce58a536f8b.ctex"]
+source_file="res://Scenes/Parallax Background/parallax-00.png"
+dest_files=["res://.godot/imported/parallax-00.png-3b590cc00184e5becbcbf6b2ff0d9553.ctex"]
 
 [params]
 

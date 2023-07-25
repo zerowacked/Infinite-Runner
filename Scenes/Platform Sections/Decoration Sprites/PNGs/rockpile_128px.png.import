@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxqat5ytkj2em"
-path="res://.godot/imported/rockpile_32px.png-d51d36a9553d38eb5209fcd097c5a638.ctex"
+uid="uid://gp6scve854np"
+path="res://.godot/imported/rockpile_128px.png-e6434cd3eb6876aad29c24692c2cbb7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Platform Sections/Decoration Sprites/rockpile_32px.png"
-dest_files=["res://.godot/imported/rockpile_32px.png-d51d36a9553d38eb5209fcd097c5a638.ctex"]
+source_file="res://Scenes/Platform Sections/Decoration Sprites/PNGs/rockpile_128px.png"
+dest_files=["res://.godot/imported/rockpile_128px.png-e6434cd3eb6876aad29c24692c2cbb7d.ctex"]
 
 [params]
 

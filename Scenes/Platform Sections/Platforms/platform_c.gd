@@ -1,3 +1,3 @@
 extends Node2D
 
-@onready var pixel_length = 560
+@onready var pixel_length = 592

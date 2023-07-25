@@ -178,8 +178,8 @@ graph_offset = Vector2(-213, 17)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2e6pr")
-move_speed = 250.0
-jump_height = 10.0
+move_speed = 1.0
+jump_height = 500.0
 jump_time_to_peak = 1.0
 jump_time_to_descent = 1.0
 

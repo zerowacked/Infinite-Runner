@@ -46,11 +46,11 @@ func can_new_platform_spawn(count, limit):
 		return true
 
 func randomize_y():
-	var random_y = randi_range(-50,50)
+	var random_y = randi_range(-25,25)
 	return random_y
 
 func randomize_blank_space(x):
-	var random_addition = randi_range(150,250)
+	var random_addition = randi_range(100,150)
 	var new_x = random_addition + x
 	return new_x
 

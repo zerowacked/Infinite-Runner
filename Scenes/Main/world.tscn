@@ -1,24 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://kd6574lauaqy"]
+[gd_scene load_steps=8 format=3 uid="uid://kd6574lauaqy"]
 
 [ext_resource type="Script" path="res://Scenes/Main/world.gd" id="1_xdrg2"]
 [ext_resource type="PackedScene" uid="uid://qeeusq8ykwqm" path="res://Scenes/Player/player.tscn" id="2_gwvm4"]
 [ext_resource type="PackedScene" uid="uid://dgj0b70o71af0" path="res://Scenes/Camera/camera.tscn" id="3_xkbcs"]
 [ext_resource type="PackedScene" uid="uid://bds3u5uijagfe" path="res://Scenes/Platform Sections/Platforms/platform_b.tscn" id="4_nk564"]
+[ext_resource type="PackedScene" uid="uid://bniutpw34gkya" path="res://Scenes/Parallax Background/parallax_background.tscn" id="5_p2jb3"]
+[ext_resource type="PackedScene" uid="uid://cxmjhmlis8b2p" path="res://Scenes/Platform Sections/Decoration Sprites/tree128px.tscn" id="6_4v11n"]
+[ext_resource type="PackedScene" uid="uid://blaifyaxd1h6i" path="res://Scenes/Parallax Background/parallax_foreground.tscn" id="7_2rqiw"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_xdrg2")
 
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_p2jb3")]
+
 [node name="Player" parent="." instance=ExtResource("2_gwvm4")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(16, 0)
-jump_height = 100.0
+move_speed = 400.0
+jump_height = 50.0
+jump_time_to_peak = 0.4
+jump_time_to_descent = 0.3
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+position = Vector2(175, -50)
 remote_path = NodePath("../../Camera")
 
 [node name="Camera" parent="." instance=ExtResource("3_xkbcs")]
-position = Vector2(16, 0)
+position = Vector2(191, -50)
+limit_top = -128
+limit_bottom = 128
 
 [node name="platform_b" parent="." instance=ExtResource("4_nk564")]
+
+[node name="tree128px" parent="." instance=ExtResource("6_4v11n")]
+position = Vector2(80, -56)
+
+[node name="ParallaxForeground" parent="." instance=ExtResource("7_2rqiw")]
+layer = 1
+offset = Vector2(190, 0)
+transform = Transform2D(1, 0, 0, 1, 190, 0)

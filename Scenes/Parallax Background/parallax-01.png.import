@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://durcs1deux6km"
-path="res://.godot/imported/tree_128px.png-712b1495c8ba620666f6a84df9930b94.ctex"
+uid="uid://ber0cuxben0pe"
+path="res://.godot/imported/parallax-01.png-33b9a6a11008d10d16ff1b10dfdf7d33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Platform Sections/Decoration Sprites/tree_128px.png"
-dest_files=["res://.godot/imported/tree_128px.png-712b1495c8ba620666f6a84df9930b94.ctex"]
+source_file="res://Scenes/Parallax Background/parallax-01.png"
+dest_files=["res://.godot/imported/parallax-01.png-33b9a6a11008d10d16ff1b10dfdf7d33.ctex"]
 
 [params]
 
