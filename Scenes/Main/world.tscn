@@ -18,19 +18,18 @@ script = ExtResource("1_xdrg2")
 z_index = 1
 y_sort_enabled = true
 position = Vector2(16, 0)
-move_speed = 400.0
 jump_height = 50.0
 jump_time_to_peak = 0.4
 jump_time_to_descent = 0.3
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-position = Vector2(175, -50)
+position = Vector2(175, -75)
 remote_path = NodePath("../../Camera")
 
 [node name="Camera" parent="." instance=ExtResource("3_xkbcs")]
-position = Vector2(191, -50)
-limit_top = -128
-limit_bottom = 128
+position = Vector2(191, -75)
+limit_top = -175
+limit_bottom = 112
 
 [node name="platform_b" parent="." instance=ExtResource("4_nk564")]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://qeeusq8ykwqm"]
+[gd_scene load_steps=25 format=3 uid="uid://qeeusq8ykwqm"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_2e6pr"]
 [ext_resource type="Texture2D" uid="uid://dohlojiteo61y" path="res://Scenes/Player/Sprite Sheets/adventurer-1.3-Sheet.png" id="1_lw835"]
@@ -161,24 +161,38 @@ _data = {
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_0x05d"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o8eum"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2pkto"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0aaoi"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wvdb6"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_80ny6"]
+states/End/position = Vector2(928.667, 85.1111)
 states/FAST_RUN/node = SubResource("AnimationNodeBlendSpace2D_ht77a")
-states/FAST_RUN/position = Vector2(446.593, 311.333)
+states/FAST_RUN/position = Vector2(693.926, 56.8888)
 states/IDLE/node = SubResource("AnimationNodeBlendSpace2D_mio5f")
-states/IDLE/position = Vector2(447.333, 86.6667)
+states/IDLE/position = Vector2(439.333, 88.2223)
 states/JUMP/node = SubResource("AnimationNodeBlendSpace2D_avq62")
-states/JUMP/position = Vector2(447.852, 400.667)
+states/JUMP/position = Vector2(694.79, 178.667)
 states/SLOW_RUN/node = SubResource("AnimationNodeBlendSpace2D_o3ckq")
-states/SLOW_RUN/position = Vector2(446.519, 237.333)
+states/SLOW_RUN/position = Vector2(133.852, 280)
+states/Start/position = Vector2(212.667, 86.6667)
 states/WALK/node = SubResource("AnimationNodeBlendSpace2D_0x05d")
-states/WALK/position = Vector2(447.556, 160)
-graph_offset = Vector2(-213, 17)
+states/WALK/position = Vector2(152.889, 213.333)
+transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_o8eum"), "IDLE", "FAST_RUN", SubResource("AnimationNodeStateMachineTransition_2pkto"), "FAST_RUN", "JUMP", SubResource("AnimationNodeStateMachineTransition_0aaoi"), "JUMP", "FAST_RUN", SubResource("AnimationNodeStateMachineTransition_wvdb6")]
+graph_offset = Vector2(-65, -47)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_suaw0"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2e6pr")
-move_speed = 1.0
 jump_height = 500.0
 jump_time_to_peak = 1.0
 jump_time_to_descent = 1.0
@@ -209,7 +223,7 @@ frame = 9
 tree_root = SubResource("AnimationNodeStateMachine_80ny6")
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_suaw0")
-parameters/FAST_RUN/blend_position = Vector2(0, 0)
+parameters/FAST_RUN/blend_position = Vector2(0.0080092, -0.00511074)
 parameters/IDLE/blend_position = Vector2(0, 0)
 parameters/JUMP/blend_position = Vector2(0, 0)
 parameters/SLOW_RUN/blend_position = Vector2(0, 0)
