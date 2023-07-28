@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var y_death_zone = 150
+
 @export var move_speed = 400
 @export var acceleration = 1  
 
@@ -17,7 +19,6 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	
 	velocity.y += get_gravity() * delta
 	velocity.x = get_input_velocity() * move_speed
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -31,6 +32,8 @@ func _physics_process(delta):
 		animationPlayer.play("FALL")
 	if velocity.x == 0:
 		animationPlayer.play("IDLE")
+	if check_y_value() > y_death_zone:
+		player_death()
 
 func get_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
@@ -41,3 +44,10 @@ func jump():
 func get_input_velocity() -> float:
 	var horizontal = acceleration
 	return horizontal
+
+func check_y_value() -> float:
+	var y_value = self.position.y
+	return y_value
+
+func player_death():
+	queue_free()

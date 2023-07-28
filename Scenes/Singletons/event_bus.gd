@@ -1,0 +1,3 @@
+extends Node2D
+
+signal platform_delete_area_entered

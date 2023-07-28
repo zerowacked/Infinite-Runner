@@ -12,7 +12,10 @@ var platform_count = 0 # number of platforms currently spawned
 @onready var platforms = [
 	preload("res://Scenes/Platform Sections/Platforms/platform_a.tscn"),
 	preload("res://Scenes/Platform Sections/Platforms/platform_b.tscn"),
-	preload("res://Scenes/Platform Sections/Platforms/platform_c.tscn")
+	preload("res://Scenes/Platform Sections/Platforms/platform_c.tscn"),
+	preload("res://Scenes/Platform Sections/Platforms/platform_d.tscn"),
+	preload("res://Scenes/Platform Sections/Platforms/platform_e.tscn"),
+	preload("res://Scenes/Platform Sections/Platforms/platform_f.tscn")
 ]
 
 func _ready():
@@ -31,7 +34,7 @@ func increment_spawn_x_value(platform_length):
 	return x_coordinate
 
 func spawn_platform():
-	var randomPlatformSelect = randi_range(0,2)
+	var randomPlatformSelect = randi_range(0,5)
 	var newPlatform = platforms[randomPlatformSelect].instantiate()
 	
 	get_tree().current_scene.add_child(newPlatform)
@@ -39,7 +42,7 @@ func spawn_platform():
 	newPlatform.position = Vector2(x_coordinate,spawn_y)
 	
 	var platform_length_increment = newPlatform.pixel_length
-	var spawn_x = increment_spawn_x_value(platform_length_increment)
+	increment_spawn_x_value(platform_length_increment)
 	platform_count = platform_count+1
 
 func can_new_platform_spawn(count, limit):

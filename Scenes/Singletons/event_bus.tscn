@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dktgeyn1o7pko"]
+
+[ext_resource type="Script" path="res://Scenes/Singletons/event_bus.gd" id="1_qjlpp"]
+
+[node name="event_bus" type="Node2D"]
+script = ExtResource("1_qjlpp")
+
+[connection signal="platform_delete_area_entered" from="." to="." method="_on_platform_delete_area_entered"]
