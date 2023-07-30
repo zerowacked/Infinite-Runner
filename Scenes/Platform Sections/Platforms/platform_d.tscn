@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d01k3en2cips4"]
+[gd_scene load_steps=7 format=3 uid="uid://d01k3en2cips4"]
 
 [ext_resource type="Script" path="res://Scenes/Platform Sections/Platforms/platform_d.gd" id="1_6j3n7"]
 [ext_resource type="PackedScene" uid="uid://bp6kgel5eo06s" path="res://Scenes/Platform Sections/Tilemap/dungeon_tile_map.tscn" id="2_5ic4v"]
 [ext_resource type="PackedScene" uid="uid://cxmjhmlis8b2p" path="res://Scenes/Platform Sections/Decoration Sprites/tree128px.tscn" id="2_qyteq"]
 [ext_resource type="PackedScene" uid="uid://ctgnj5e5e76g8" path="res://Scenes/Platform Sections/Decoration Sprites/rockpile_32px.tscn" id="3_wyb0e"]
 [ext_resource type="PackedScene" uid="uid://b4dr3fokk7gdk" path="res://Scenes/Platform Sections/Decoration Sprites/rockpile_64px.tscn" id="5_hmuqq"]
+[ext_resource type="PackedScene" uid="uid://1rlvvwp7jiak" path="res://Scenes/Platform Sections/Platform Section - Utils/composed_platform_despawn_collider.tscn" id="6_fn471"]
 
 [node name="platform_d" type="Node2D"]
 script = ExtResource("1_6j3n7")
@@ -20,3 +21,5 @@ layer_0/tile_data = PackedInt32Array(0, 131073, 12, 65536, 131073, 13, 131072, 1
 
 [node name="rockpile_64px" parent="." instance=ExtResource("5_hmuqq")]
 position = Vector2(120, 24)
+
+[node name="Platform_Despawn_Collider" parent="." instance=ExtResource("6_fn471")]
