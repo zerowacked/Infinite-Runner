@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var y_death_zone = 150
 
-@export var move_speed = 400
+@export var move_speed = 0
 @export var acceleration = 1  
 
 @export var jump_height : float
@@ -16,12 +16,12 @@ var y_death_zone = 150
 @onready var animationPlayer = $AnimationPlayer
 
 func _ready():
-	pass
+	EventBus.player_pressed_start.connect(on_player_start_button_pressed)
 
 func _physics_process(delta):
 	velocity.y += get_gravity() * delta
 	velocity.x = get_input_velocity() * move_speed
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and velocity.x > 0:
 		jump()
 	move_and_slide()
 	if velocity.y < 0:
@@ -50,4 +50,9 @@ func check_y_value() -> float:
 	return y_value
 
 func player_death():
+	var meters_run = roundf((self.position.x / 30) * 1.8)
+	print(meters_run)
 	queue_free()
+
+func on_player_start_button_pressed():
+	move_speed = 400

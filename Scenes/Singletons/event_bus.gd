@@ -1,3 +1,4 @@
 extends Node2D
 
 signal platform_delete_area_entered
+signal player_pressed_start

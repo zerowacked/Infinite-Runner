@@ -1,7 +1,6 @@
 extends Area2D
 
 func _ready():
-	#self.area_entered.connect(_on_platform_despawn_collider_area_entered)
 	pass
 
 func _on_platform_despawn_collider_area_entered(_area):

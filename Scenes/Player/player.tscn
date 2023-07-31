@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://qeeusq8ykwqm"]
+[gd_scene load_steps=26 format=3 uid="uid://qeeusq8ykwqm"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_2e6pr"]
 [ext_resource type="Texture2D" uid="uid://dohlojiteo61y" path="res://Scenes/Player/Sprite Sheets/adventurer-1.3-Sheet.png" id="1_lw835"]
 [ext_resource type="Texture2D" uid="uid://ditm6lrod55cm" path="res://Scenes/Player/Sprite Sheets/spritesheet.png" id="3_mxkua"]
+[ext_resource type="PackedScene" uid="uid://dsnbcf7b5qws1" path="res://Scenes/Player/Player - Utils/player_start_checker.tscn" id="4_ngqxy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01wbq"]
 size = Vector2(19, 30)
@@ -228,3 +229,5 @@ parameters/IDLE/blend_position = Vector2(0, 0)
 parameters/JUMP/blend_position = Vector2(0, 0)
 parameters/SLOW_RUN/blend_position = Vector2(0, 0)
 parameters/WALK/blend_position = Vector2(0, 0)
+
+[node name="player_start_checker" parent="." instance=ExtResource("4_ngqxy")]
