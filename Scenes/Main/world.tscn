@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://kd6574lauaqy"]
+[gd_scene load_steps=10 format=3 uid="uid://kd6574lauaqy"]
 
 [ext_resource type="Script" path="res://Scenes/Main/world.gd" id="1_xdrg2"]
 [ext_resource type="PackedScene" uid="uid://qeeusq8ykwqm" path="res://Scenes/Player/player.tscn" id="2_gwvm4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bds3u5uijagfe" path="res://Scenes/Platform Sections/Platforms/platform_b.tscn" id="4_nk564"]
 [ext_resource type="PackedScene" uid="uid://bniutpw34gkya" path="res://Scenes/Parallax Background/parallax_background.tscn" id="5_p2jb3"]
 [ext_resource type="PackedScene" uid="uid://cxmjhmlis8b2p" path="res://Scenes/Platform Sections/Decoration Sprites/tree128px.tscn" id="6_4v11n"]
+[ext_resource type="PackedScene" uid="uid://sry02vmuvtce" path="res://Scenes/Player/Player - Utils/meters_run_display.tscn" id="6_qk2ot"]
 [ext_resource type="PackedScene" uid="uid://blaifyaxd1h6i" path="res://Scenes/Parallax Background/parallax_foreground.tscn" id="7_2rqiw"]
 [ext_resource type="PackedScene" uid="uid://dktgeyn1o7pko" path="res://Scenes/Singletons/event_bus.tscn" id="8_ydgkn"]
 
@@ -35,6 +36,15 @@ remote_path = NodePath("../../Camera")
 position = Vector2(183, -75)
 limit_top = -175
 limit_bottom = 112
+
+[node name="meters_run_display" parent="Camera" instance=ExtResource("6_qk2ot")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_top = -250.0
+offset_bottom = -250.0
+grow_vertical = 1
 
 [node name="platform_b" parent="." instance=ExtResource("4_nk564")]
 

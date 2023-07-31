@@ -51,7 +51,7 @@ func check_y_value() -> float:
 
 func player_death():
 	var meters_run = roundf((self.position.x / 30) * 1.8)
-	print(meters_run)
+	EventBus.player_death.emit(meters_run)
 	queue_free()
 
 func on_player_start_button_pressed():

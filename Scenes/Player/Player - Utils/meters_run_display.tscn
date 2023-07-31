@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://sry02vmuvtce"]
+
+[ext_resource type="Script" path="res://Scenes/Player/Player - Utils/meters_run_display.gd" id="1_5qivp"]
+
+[node name="meters_run_display" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_5qivp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_right = 127.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "You ran [x] meters before falling!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 48.0
+offset_right = 33.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="restart_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="quit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]
