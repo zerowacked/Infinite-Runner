@@ -38,7 +38,6 @@ limit_top = -175
 limit_bottom = 112
 
 [node name="meters_run_display" parent="Camera" instance=ExtResource("6_qk2ot")]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
