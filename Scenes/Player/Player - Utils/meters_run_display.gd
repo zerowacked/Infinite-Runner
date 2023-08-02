@@ -1,6 +1,6 @@
 extends Control
 
-@onready var label = $Label
+@onready var label = $TextureRect/Label
 
 func _ready():
 	EventBus.player_death.connect(on_player_death)

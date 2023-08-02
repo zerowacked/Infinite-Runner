@@ -6,4 +6,4 @@ It is designed to test my functional knowledge of Godot without assistance from 
 
 It is a test bed for VCS functionality in Godot.
 
-It is created on Godot 4.0 stable, but should function if you pull this to your local and you're using Godot ~4.x
+It is created on Godot 4.0.stable

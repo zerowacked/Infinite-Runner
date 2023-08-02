@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvq2unso27ph"
-path="res://.godot/imported/cloudySky_640x360px.png-548bf4e2741bfd07346176b1ad4d7045.ctex"
+uid="uid://bv0sgw4cd64qt"
+path="res://.godot/imported/Button_500_px_edit.png-286f050c3fc96d336582b9d0b052083b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Parallax Background/cloudySky_640x360px.png"
-dest_files=["res://.godot/imported/cloudySky_640x360px.png-548bf4e2741bfd07346176b1ad4d7045.ctex"]
+source_file="res://Scenes/Menu/Menu Sprites/Button_500_px_edit.png"
+dest_files=["res://.godot/imported/Button_500_px_edit.png-286f050c3fc96d336582b9d0b052083b.ctex"]
 
 [params]
 

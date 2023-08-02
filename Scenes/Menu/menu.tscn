@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnstm7fccww0u"]
+[gd_scene load_steps=10 format=3 uid="uid://dnstm7fccww0u"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/menu.gd" id="1_xvmx5"]
+[ext_resource type="Texture2D" uid="uid://bv0sgw4cd64qt" path="res://Scenes/Menu/Menu Sprites/Button_500_px_edit.png" id="2_54ein"]
+[ext_resource type="FontFile" uid="uid://d04xer38ufnj8" path="res://Scenes/Menu/Menu Fonts/ManaSeedTitle.ttf" id="2_bjcrt"]
+[ext_resource type="PackedScene" uid="uid://bniutpw34gkya" path="res://Scenes/Parallax Background/parallax_background.tscn" id="2_orl1n"]
+[ext_resource type="Script" path="res://Scenes/Menu/ParallaxLayer3.gd" id="3_1wurw"]
+[ext_resource type="Script" path="res://Scenes/Menu/ParallaxLayer4.gd" id="4_l3uql"]
+[ext_resource type="Texture2D" uid="uid://coe47oi748i86" path="res://Scenes/Menu/Menu Sprites/Button_500_px_edit_click.png" id="4_lpggb"]
+[ext_resource type="Texture2D" uid="uid://cwqbvnuhgodt1" path="res://Scenes/Menu/Menu Sprites/Button_500_px_edit_hover.png" id="5_aignd"]
+[ext_resource type="AudioStream" uid="uid://blty14ltgofxh" path="res://Scenes/Menu/Menu_SFX/menu_click.wav" id="9_7w3ct"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,30 +19,106 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xvmx5")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.0
+offset_top = 20.0
+offset_right = 105.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_bjcrt")
+text = "Infinite Runner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.021
-anchor_top = 0.944
-anchor_right = 0.021
-anchor_bottom = 0.944
-offset_left = -0.320004
-offset_top = -67.5201
-offset_right = 45.68
-offset_bottom = -0.520081
-theme_override_constants/separation = 5
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -120.0
+offset_right = 635.0
+offset_bottom = 328.0
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+theme_override_constants/separation = 20
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="StartButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../QuitButton")
-focus_neighbor_bottom = NodePath("../QuitButton")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_54ein")
+texture_pressed = ExtResource("4_lpggb")
+texture_hover = ExtResource("5_aignd")
+stretch_mode = 4
+flip_v = true
+
+[node name="Label" type="Label" parent="VBoxContainer/StartButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_bjcrt")
+theme_override_font_sizes/font_size = 65
 text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../StartButton")
-focus_neighbor_bottom = NodePath(".")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_54ein")
+texture_pressed = ExtResource("4_lpggb")
+texture_hover = ExtResource("5_aignd")
+flip_v = true
+
+[node name="Label" type="Label" parent="VBoxContainer/QuitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_bjcrt")
+theme_override_font_sizes/font_size = 65
 text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_orl1n")]
+offset = Vector2(0, 190)
+transform = Transform2D(1, 0, 0, 1, 0, 190)
+follow_viewport_enabled = true
+
+[node name="ParallaxLayer" parent="ParallaxBackground" index="0"]
+motion_mirroring = Vector2(1440, 0)
+
+[node name="Sprite2D" parent="ParallaxBackground/ParallaxLayer" index="0"]
+position = Vector2(14, 80)
+
+[node name="ParallaxLayer2" parent="ParallaxBackground" index="1"]
+motion_scale = Vector2(0, 0)
+
+[node name="ParallaxLayer3" parent="ParallaxBackground" index="2"]
+motion_scale = Vector2(0.1, 0)
+script = ExtResource("3_1wurw")
+
+[node name="ParallaxLayer4" parent="ParallaxBackground" index="3"]
+motion_scale = Vector2(0.4, 0.4)
+script = ExtResource("4_l3uql")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_7w3ct")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+
+[editable path="ParallaxBackground"]

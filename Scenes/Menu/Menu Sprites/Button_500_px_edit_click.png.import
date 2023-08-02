@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0vr6ypsh7hqt"
-path="res://.godot/imported/par2_tileable_640x360px.png-53f8154390ff202269615115ac0ec730.ctex"
+uid="uid://coe47oi748i86"
+path="res://.godot/imported/Button_500_px_edit_click.png-2162f722c1b793410079784f9ecc7527.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Parallax Background/par2_tileable_640x360px.png"
-dest_files=["res://.godot/imported/par2_tileable_640x360px.png-53f8154390ff202269615115ac0ec730.ctex"]
+source_file="res://Scenes/Menu/Menu Sprites/Button_500_px_edit_click.png"
+dest_files=["res://.godot/imported/Button_500_px_edit_click.png-2162f722c1b793410079784f9ecc7527.ctex"]
 
 [params]
 
