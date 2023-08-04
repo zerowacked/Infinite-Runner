@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://kd6574lauaqy"]
+[gd_scene load_steps=12 format=3 uid="uid://kd6574lauaqy"]
 
 [ext_resource type="Script" path="res://Scenes/Main/world.gd" id="1_xdrg2"]
 [ext_resource type="PackedScene" uid="uid://qeeusq8ykwqm" path="res://Scenes/Player/player.tscn" id="2_gwvm4"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://sry02vmuvtce" path="res://Scenes/Player/Player - Utils/meters_run_display.tscn" id="6_qk2ot"]
 [ext_resource type="PackedScene" uid="uid://blaifyaxd1h6i" path="res://Scenes/Parallax Background/parallax_foreground.tscn" id="7_2rqiw"]
 [ext_resource type="PackedScene" uid="uid://dktgeyn1o7pko" path="res://Scenes/Singletons/event_bus.tscn" id="8_ydgkn"]
+[ext_resource type="AudioStream" uid="uid://ch6uxoe4f3ys6" path="res://Scenes/Main/Main Music/LEGACY - Battle For Mana OGG.ogg" id="10_i0tte"]
+[ext_resource type="AudioStream" uid="uid://dl4yesfemv2ee" path="res://Scenes/Player/Player Sounds/die_knight.wav" id="11_vxo20"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -55,3 +57,11 @@ position = Vector2(80, -56)
 layer = 1
 offset = Vector2(190, 0)
 transform = Transform2D(1, 0, 0, 1, 190, 0)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_i0tte")
+volume_db = -30.072
+
+[node name="DeathSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_vxo20")
+volume_db = -3.459

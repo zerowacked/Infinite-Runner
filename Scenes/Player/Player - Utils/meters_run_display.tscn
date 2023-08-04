@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://sry02vmuvtce"]
+[gd_scene load_steps=9 format=3 uid="uid://sry02vmuvtce"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player - Utils/meters_run_display.gd" id="1_5qivp"]
 [ext_resource type="Texture2D" uid="uid://dqyigkkmai2rl" path="res://Scenes/Menu/Menu Sprites/red_banner_1000px_edit.png" id="2_xtpjo"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bv0sgw4cd64qt" path="res://Scenes/Menu/Menu Sprites/Button_500_px_edit.png" id="4_eqsu5"]
 [ext_resource type="Texture2D" uid="uid://coe47oi748i86" path="res://Scenes/Menu/Menu Sprites/Button_500_px_edit_click.png" id="5_g78va"]
 [ext_resource type="Texture2D" uid="uid://cwqbvnuhgodt1" path="res://Scenes/Menu/Menu Sprites/Button_500_px_edit_hover.png" id="6_6eehh"]
+[ext_resource type="AudioStream" uid="uid://blty14ltgofxh" path="res://Scenes/Menu/Menu_SFX/menu_click.wav" id="7_evut2"]
+[ext_resource type="AudioStream" uid="uid://q5jcluau05js" path="res://Scenes/Menu/Menu_SFX/UI Tight 04.wav" id="8_vkknq"]
 
 [node name="meters_run_display" type="Control"]
 visible = false
@@ -110,6 +112,12 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_21q7f")
 theme_override_font_sizes/font_size = 51
 text = "Quit"
+
+[node name="restart_sound_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_evut2")
+
+[node name="quit_sound_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_vkknq")
 
 [connection signal="pressed" from="VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

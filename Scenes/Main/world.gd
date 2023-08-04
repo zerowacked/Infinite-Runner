@@ -1,8 +1,7 @@
 extends Node2D
 
-#@onready var platformA = preload("res://Scenes/Platform Sections/platform_a.tscn")
-#@onready var platformB = preload("res://Scenes/Platform Sections/platform_b.tscn")
-#@onready var platformC = preload("res://Scenes/Platform Sections/platform_c.tscn")
+@onready var musicPlayer = $MusicPlayer
+@onready var deathSoundPlayer = $DeathSoundPlayer
 
 @export var platform_limit = 10 # configurable number of platforms allowed to exist at one time before despawn
 @export var platform_count: int = 0 :
@@ -10,7 +9,6 @@ extends Node2D
 		return platform_count
 	set(value):
 		platform_count = value
-
 
 var x_coordinate = 600 # this is the x coordinate of the last pixel of the start platform
 
@@ -28,6 +26,8 @@ var x_coordinate = 600 # this is the x coordinate of the last pixel of the start
 func _ready():
 	randomize()
 	EventBus.platform_delete_area_entered.connect(on_platform_delete_area_entered)
+	EventBus.player_pressed_start.connect(on_player_pressed_start)
+	EventBus.player_death.connect(on_player_death)
 
 func _physics_process(_delta):
 	if can_new_platform_spawn(platform_count, platform_limit) == true:
@@ -70,3 +70,10 @@ func randomize_blank_space(x):
 
 func on_platform_delete_area_entered():
 	platform_count = platform_count - 1
+
+func on_player_pressed_start():
+	musicPlayer.play()
+
+func on_player_death(_meters_run):
+	deathSoundPlayer.play()
+	musicPlayer.stop()

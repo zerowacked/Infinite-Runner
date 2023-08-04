@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnstm7fccww0u"]
+[gd_scene load_steps=12 format=3 uid="uid://dnstm7fccww0u"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/menu.gd" id="1_xvmx5"]
 [ext_resource type="Texture2D" uid="uid://bv0sgw4cd64qt" path="res://Scenes/Menu/Menu Sprites/Button_500_px_edit.png" id="2_54ein"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://coe47oi748i86" path="res://Scenes/Menu/Menu Sprites/Button_500_px_edit_click.png" id="4_lpggb"]
 [ext_resource type="Texture2D" uid="uid://cwqbvnuhgodt1" path="res://Scenes/Menu/Menu Sprites/Button_500_px_edit_hover.png" id="5_aignd"]
 [ext_resource type="AudioStream" uid="uid://blty14ltgofxh" path="res://Scenes/Menu/Menu_SFX/menu_click.wav" id="9_7w3ct"]
+[ext_resource type="AudioStream" uid="uid://q5jcluau05js" path="res://Scenes/Menu/Menu_SFX/UI Tight 04.wav" id="10_idfla"]
+[ext_resource type="AudioStream" uid="uid://nbpr4rt27jpb" path="res://Scenes/Menu/Menu Music/REBORN - The Fallen OGG.ogg" id="11_7chel"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -117,8 +119,15 @@ script = ExtResource("4_l3uql")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_7w3ct")
 
+[node name="QuitSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_idfla")
+
+[node name="MenuMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_7chel")
+volume_db = -22.585
+autoplay = true
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
 [editable path="ParallaxBackground"]

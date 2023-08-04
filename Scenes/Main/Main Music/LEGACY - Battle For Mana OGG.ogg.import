@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ch6uxoe4f3ys6"
+path="res://.godot/imported/LEGACY - Battle For Mana OGG.ogg-8db5390d3d53de1faa2f34ded1dffe09.oggvorbisstr"
+
+[deps]
+
+source_file="res://Scenes/Main/Main Music/LEGACY - Battle For Mana OGG.ogg"
+dest_files=["res://.godot/imported/LEGACY - Battle For Mana OGG.ogg-8db5390d3d53de1faa2f34ded1dffe09.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
