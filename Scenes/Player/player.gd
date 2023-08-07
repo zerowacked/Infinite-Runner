@@ -2,6 +2,15 @@ extends CharacterBody2D
 
 var y_death_zone = 150
 
+enum {
+	JUMP,
+	FALL,
+	RUN,
+	IDLE
+}
+
+var state = IDLE
+
 @export var move_speed = 0
 @export var acceleration = 1  
 
@@ -23,14 +32,21 @@ func _physics_process(delta):
 	velocity.x = get_input_velocity() * move_speed
 	if Input.is_action_just_pressed("jump") and is_on_floor() and velocity.x > 0:
 		jump()
+		print(velocity.y)
 	move_and_slide()
+	if Input.is_action_just_released("jump") and state == JUMP:
+		velocity.y = -125 
 	if velocity.y < 0:
+		state = JUMP
 		animationPlayer.play("JUMP")
 	if velocity.x > 0 and is_on_floor():
+		state = RUN
 		animationPlayer.play("FAST_RUN")
 	if velocity.y > 0: 
+		state = FALL
 		animationPlayer.play("FALL")
 	if velocity.x == 0:
+		state = IDLE
 		animationPlayer.play("IDLE")
 	if check_y_value() > y_death_zone:
 		player_death()

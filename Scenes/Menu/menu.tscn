@@ -42,9 +42,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = -120.0
+offset_top = -176.0
 offset_right = 635.0
-offset_bottom = 328.0
+offset_bottom = 479.0
 grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 theme_override_constants/separation = 20
@@ -69,6 +69,29 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_bjcrt")
 theme_override_font_sizes/font_size = 65
 text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_54ein")
+texture_pressed = ExtResource("4_lpggb")
+texture_hover = ExtResource("5_aignd")
+stretch_mode = 4
+flip_v = true
+
+[node name="Label" type="Label" parent="VBoxContainer/CreditButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_bjcrt")
+theme_override_font_sizes/font_size = 65
+text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -128,6 +151,7 @@ volume_db = -22.585
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 
 [editable path="ParallaxBackground"]

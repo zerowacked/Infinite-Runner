@@ -31,11 +31,11 @@ jump_time_to_peak = 0.4
 jump_time_to_descent = 0.3
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-position = Vector2(175, -75)
+position = Vector2(275, -75)
 remote_path = NodePath("../../Camera")
 
 [node name="Camera" parent="." instance=ExtResource("3_xkbcs")]
-position = Vector2(183, -75)
+position = Vector2(283, -75)
 limit_top = -175
 limit_bottom = 112
 
