@@ -32,9 +32,8 @@ func _physics_process(delta):
 	velocity.x = get_input_velocity() * move_speed
 	if Input.is_action_just_pressed("jump") and is_on_floor() and velocity.x > 0:
 		jump()
-		print(velocity.y)
 	move_and_slide()
-	if Input.is_action_just_released("jump") and state == JUMP:
+	if Input.is_action_just_released("jump") and state == JUMP and velocity.y < -125:
 		velocity.y = -125 
 	if velocity.y < 0:
 		state = JUMP
