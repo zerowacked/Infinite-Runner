@@ -5,19 +5,6 @@ const land_effect = preload("res://Scenes/VFX/land effect/land effect.tscn")
 
 var y_death_zone : int = 150
 
-enum STATES {
-	JUMP,
-	FALL,
-	RUN,
-	IDLE
-}
-
-var state : STATES = STATES.IDLE:
-	get:
-		return state
-	set(value):
-		state = value
-
 @export var move_speed : int = 0
 @export var acceleration :int  = 1  
 
@@ -41,22 +28,17 @@ func _physics_process(delta : float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor() and velocity.x > 0:
 		jump()
 	move_and_slide()
-	if Input.is_action_just_released("jump") and state == STATES.JUMP and velocity.y < -125:
+	if Input.is_action_just_released("jump") and velocity.y < -125:
 		velocity.y = (jump_velocity / 2)
 	if velocity.y < 0:
-		state = STATES.JUMP
 		animationPlayer.play("JUMP")
 	if velocity.x > 0 and is_on_floor():
-		state = STATES.RUN
 		animationPlayer.play("FAST_RUN")
 	if velocity.y > 0: 
-		state = STATES.FALL
 		animationPlayer.play("FALL")
 	if velocity.x == 0:
-		state = STATES.IDLE
 		animationPlayer.play("IDLE")
 	if landing_ray.enabled == true:
-		print("landing ray enabled")
 		check_landing_collider()
 	if check_y_value() > y_death_zone:
 		player_death()
@@ -94,8 +76,8 @@ func on_player_start_button_pressed() -> void:
 func spawn_land_effect(landing_ray_collision_point : Vector2) -> void:
 	var land = land_effect.instantiate()
 	get_tree().current_scene.add_child(land)
-	land.position = landing_ray_collision_point
-	#land.position.y = self.position.y + 8
+	land.position = self.position
+	land.position.y = self.position.y + 10
 
 func check_landing_collider() -> void:
 	if landing_ray.is_colliding() == true:
