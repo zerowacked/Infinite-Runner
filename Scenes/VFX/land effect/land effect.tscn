@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbtcp8qhbp1rm"]
+
+[ext_resource type="Texture2D" uid="uid://duh4pv8uhjlhq" path="res://Scenes/VFX/land effect/Landcloud-1.png" id="1_hyjfc"]
+[ext_resource type="Texture2D" uid="uid://bl0u823imuxku" path="res://Scenes/VFX/land effect/Landcloud-2.png" id="2_qrd0q"]
+[ext_resource type="Texture2D" uid="uid://chk4pp6e3q1mm" path="res://Scenes/VFX/land effect/Landcloud-3.png" id="3_oh53i"]
+[ext_resource type="Texture2D" uid="uid://bykmm84qte7um" path="res://Scenes/VFX/land effect/Landcloud-4.png" id="4_jldcr"]
+[ext_resource type="Texture2D" uid="uid://iprwrvvk2x8e" path="res://Scenes/VFX/land effect/Landcloud-5.png" id="5_qtikl"]
+[ext_resource type="Texture2D" uid="uid://myj4a2w38u0n" path="res://Scenes/VFX/land effect/Landcloud-6.png" id="6_j71ey"]
+[ext_resource type="Texture2D" uid="uid://3vi7dkn5kwvn" path="res://Scenes/VFX/land effect/Landcloud-7.png" id="7_1u3la"]
+[ext_resource type="Texture2D" uid="uid://dh17bmh8l4r35" path="res://Scenes/VFX/land effect/Landcloud-8.png" id="8_jbg7e"]
+[ext_resource type="Script" path="res://Scenes/VFX/land effect/land effect.gd" id="9_4xm1b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2ttr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hyjfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qrd0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oh53i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jldcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qtikl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j71ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1u3la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jbg7e")
+}],
+"loop": false,
+"name": &"land",
+"speed": 32.0
+}]
+
+[node name="LandEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_q2ttr")
+animation = &"land"
+frame = 7
+frame_progress = 1.0
+script = ExtResource("9_4xm1b")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

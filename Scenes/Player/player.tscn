@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://qeeusq8ykwqm"]
+[gd_scene load_steps=25 format=3 uid="uid://qeeusq8ykwqm"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_2e6pr"]
 [ext_resource type="Texture2D" uid="uid://dohlojiteo61y" path="res://Scenes/Player/Sprite Sheets/adventurer-1.3-Sheet.png" id="1_lw835"]
@@ -190,8 +190,6 @@ states/WALK/position = Vector2(152.889, 213.333)
 transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_o8eum"), "IDLE", "FAST_RUN", SubResource("AnimationNodeStateMachineTransition_2pkto"), "FAST_RUN", "JUMP", SubResource("AnimationNodeStateMachineTransition_0aaoi"), "JUMP", "FAST_RUN", SubResource("AnimationNodeStateMachineTransition_wvdb6")]
 graph_offset = Vector2(-65, -47)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_suaw0"]
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2e6pr")
 jump_height = 500.0
@@ -206,7 +204,6 @@ vframes = 12
 frame = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_01wbq")
 
@@ -221,9 +218,11 @@ hframes = 48
 frame = 9
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xydlm")
+}
 tree_root = SubResource("AnimationNodeStateMachine_80ny6")
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_suaw0")
 parameters/FAST_RUN/blend_position = Vector2(0.0080092, -0.00511074)
 parameters/IDLE/blend_position = Vector2(0, 0)
 parameters/JUMP/blend_position = Vector2(0, 0)
@@ -231,3 +230,8 @@ parameters/SLOW_RUN/blend_position = Vector2(0, 0)
 parameters/WALK/blend_position = Vector2(0, 0)
 
 [node name="player_start_checker" parent="." instance=ExtResource("4_ngqxy")]
+
+[node name="LandingRay" type="RayCast2D" parent="."]
+position = Vector2(2, -2)
+enabled = false
+target_position = Vector2(0, 21)

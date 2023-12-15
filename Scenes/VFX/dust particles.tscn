@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq6ih50s71qbl"]
+
+[ext_resource type="Texture2D" uid="uid://dgat62tj6jdw4" path="res://Scenes/VFX/dust_particle.png" id="1_avis7"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fnos5"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 5.2
+angle_min = -720.0
+angle_max = 720.0
+spread = 28.962
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 98, 0)
+turbulence_enabled = true
+
+[node name="DustParticles" type="GPUParticles2D"]
+amount = 10
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_fnos5")
+texture = ExtResource("1_avis7")
+lifetime = 0.1
+speed_scale = 0.9
+explosiveness = 0.58
+randomness = 0.04
+trail_lifetime = 0.01
